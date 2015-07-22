@@ -17595,3 +17595,1269 @@ Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-19 12:10:20 
 
 
 Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-19 12:10:20 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 13:57:06 -0400
+
+ActiveRecord::PendingMigrationError - 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+:
+  activerecord (4.2.0) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.0) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/8f1a6b6cd82875cf/variables" for ::1 at 2015-07-22 13:57:07 -0400
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20140310213347)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140310213347"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateUsers (20140513204227)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140513204227"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateTags (20140513204345)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140513204345"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreatePostTags (20140513204421)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "post_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "tag_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140513204421"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Migrating to CreateComments (20140515201314)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "user_id" integer, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140515201314"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Migrating to AddEmailAndPasswordDigestToUsers (20140516162038)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "email" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516162038"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2015-07-22 13:57:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 419ms (Views: 369.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 13:57:23 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2015-07-22 13:57:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 13:57:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 13:57:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 13:57:23 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 13:59:40 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 13:59:40 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 13:59:40 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2015-07-22 13:59:40 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 13:59:40 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 13:59:40 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:01:16 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 41ms
+
+ArgumentError - wrong number of arguments (2 for 1)
+  (in /Users/abhijitpradhan/Development/rails-blog-asset-pipeline-web-0615/app/assets/stylesheets/application.css:12):
+  sprockets (2.11.0) lib/sprockets/directive_processor.rb:167:in `block in process_directives'
+  sprockets (2.11.0) lib/sprockets/directive_processor.rb:165:in `process_directives'
+  sprockets (2.11.0) lib/sprockets/directive_processor.rb:99:in `evaluate'
+  tilt (1.4.1) lib/tilt/template.rb:103:in `render'
+  sprockets (2.11.0) lib/sprockets/context.rb:197:in `block in evaluate'
+  sprockets (2.11.0) lib/sprockets/context.rb:194:in `evaluate'
+  sprockets (2.11.0) lib/sprockets/processed_asset.rb:12:in `initialize'
+  sprockets (2.11.0) lib/sprockets/base.rb:374:in `block in build_asset'
+  sprockets (2.11.0) lib/sprockets/base.rb:395:in `circular_call_protection'
+  sprockets (2.11.0) lib/sprockets/base.rb:373:in `build_asset'
+  sprockets (2.11.0) lib/sprockets/index.rb:94:in `block in build_asset'
+  sprockets (2.11.0) lib/sprockets/caching.rb:58:in `cache_asset'
+  sprockets (2.11.0) lib/sprockets/index.rb:93:in `build_asset'
+  sprockets (2.11.0) lib/sprockets/base.rb:287:in `find_asset'
+  sprockets (2.11.0) lib/sprockets/index.rb:61:in `find_asset'
+  sprockets (2.11.0) lib/sprockets/bundled_asset.rb:37:in `init_with'
+  sprockets (2.11.0) lib/sprockets/asset.rb:24:in `from_hash'
+  sprockets (2.11.0) lib/sprockets/caching.rb:54:in `cache_asset'
+  sprockets (2.11.0) lib/sprockets/index.rb:93:in `build_asset'
+  sprockets (2.11.0) lib/sprockets/base.rb:287:in `find_asset'
+  sprockets (2.11.0) lib/sprockets/index.rb:61:in `find_asset'
+  sprockets (2.11.0) lib/sprockets/environment.rb:75:in `find_asset'
+  sprockets (2.11.0) lib/sprockets/base.rb:295:in `[]'
+  sprockets-rails (2.0.1) lib/sprockets/rails/helper.rb:144:in `lookup_asset_for_path'
+  sprockets-rails (2.0.1) lib/sprockets/rails/helper.rb:113:in `block in stylesheet_link_tag'
+  sprockets-rails (2.0.1) lib/sprockets/rails/helper.rb:112:in `stylesheet_link_tag'
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__3162350917297928702_70278573204220'
+  actionview (4.2.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.0) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:66:in `render_with_layout'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.0) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.0) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/5483090fa6ac9901/variables" for ::1 at 2015-07-22 14:01:16 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:01:21 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 55.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:01:21 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:01:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:01:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:01:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:01:21 -0400
+
+
+Started GET "/posts" for ::1 at 2015-07-22 14:02:13 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 37ms (Views: 24.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:02:13 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:02:13 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:02:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:02:13 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:02:13 -0400
+
+
+Started GET "/posts" for ::1 at 2015-07-22 14:02:15 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:02:15 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:02:15 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:02:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:02:15 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:02:15 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:02:25 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:02:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:02:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:02:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:02:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:02:25 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:10:28 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+Completed 500 Internal Server Error in 52ms
+
+SyntaxError - syntax error, unexpected '<'
+...reeze;@output_buffer.append=( <%= link_to("Posts", posts_pat...
+...                               ^
+/Users/abhijitpradhan/Development/rails-blog-asset-pipeline-web-0615/app/views/layouts/_header.html.erb:29: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/abhijitpradhan/Development/rails-blog-asset-pipeline-web-0615/app/views/layouts/_header.html.erb:31: syntax error, unexpected keyword_end, expecting ')':
+  app/views/layouts/_header.html.erb:9:in `'
+  actionview (4.2.0) lib/action_view/template.rb:296:in `compile'
+  actionview (4.2.0) lib/action_view/template.rb:245:in `block (2 levels) in compile!'
+  activesupport (4.2.0) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:244:in `block in compile!'
+  actionview (4.2.0) lib/action_view/template.rb:232:in `compile!'
+  actionview (4.2.0) lib/action_view/template.rb:144:in `block in render'
+  activesupport (4.2.0) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.0) lib/action_view/renderer/partial_renderer.rb:339:in `render_partial'
+  actionview (4.2.0) lib/action_view/renderer/partial_renderer.rb:310:in `block in render'
+  actionview (4.2.0) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.0) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.0) lib/action_view/renderer/partial_renderer.rb:309:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.0) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__3162350917297928702_70278573204220'
+  actionview (4.2.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.0) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:66:in `render_with_layout'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.0) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.0) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/d79a5755a52408a8/variables" for ::1 at 2015-07-22 14:10:29 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:10:41 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:10:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:10:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:10:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:10:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:10:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:10:59 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:11:00 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:12:35 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:12:36 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:12:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:12:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:12:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:12:36 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:16:17 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 500 Internal Server Error in 31ms
+
+SyntaxError - syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/abhijitpradhan/Development/rails-blog-asset-pipeline-web-0615/app/views/layouts/_header.html.erb:30: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/views/layouts/_header.html.erb:28:in `'
+  actionview (4.2.0) lib/action_view/template.rb:296:in `compile'
+  actionview (4.2.0) lib/action_view/template.rb:245:in `block (2 levels) in compile!'
+  activesupport (4.2.0) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:244:in `block in compile!'
+  actionview (4.2.0) lib/action_view/template.rb:232:in `compile!'
+  actionview (4.2.0) lib/action_view/template.rb:144:in `block in render'
+  activesupport (4.2.0) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.0) lib/action_view/renderer/partial_renderer.rb:339:in `render_partial'
+  actionview (4.2.0) lib/action_view/renderer/partial_renderer.rb:310:in `block in render'
+  actionview (4.2.0) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.0) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.0) lib/action_view/renderer/partial_renderer.rb:309:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.0) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3162350917297928702_70278598479760'
+  actionview (4.2.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.0) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:66:in `render_with_layout'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.0) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.0) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/abhijitpradhan/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/421b13d46744d9d8/variables" for ::1 at 2015-07-22 14:16:18 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:16:50 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 77ms (Views: 76.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:16:50 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:16:50 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:16:50 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:16:50 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:16:50 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:17:25 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:17:26 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:17:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:17:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:17:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:17:26 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:17:56 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:17:56 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:17:56 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:17:56 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:17:56 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:17:56 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:18:43 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:18:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:18:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:18:43 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:18:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:18:43 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:19:06 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:19:07 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:19:07 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:19:07 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:19:07 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:19:07 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:19:08 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:19:08 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:19:09 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:19:09 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:19:09 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:19:09 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:19:19 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:19:19 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:19:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:19:19 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:19:19 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:19:19 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:19:30 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:19:31 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:19:31 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:19:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:19:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:19:31 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:28:35 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:28:35 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:28:35 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:28:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:28:35 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:28:36 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:32:37 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 3626ms (Views: 3624.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:32:41 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:32:41 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:32:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:32:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:32:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:32:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:32:41 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:32:45 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2015-07-22 14:32:46 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:32:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:32:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:32:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:32:46 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:32:46 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:33:05 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.1ms)
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 115ms (Views: 114.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:33:06 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for ::1 at 2015-07-22 14:33:06 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:33:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:33:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:33:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:33:06 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:35:28 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:35:29 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:35:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:35:29 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:35:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:35:29 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:36:40 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:36:41 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:36:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:36:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:36:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:36:41 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:37:32 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:37:32 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:37:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:37:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:37:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:37:32 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:38:02 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:38:02 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:38:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:38:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:38:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:38:02 -0400
+
+
+Started GET "/posts" for ::1 at 2015-07-22 14:38:04 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:38:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:38:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:38:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:38:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:38:05 -0400
+
+
+Started GET "/signup" for ::1 at 2015-07-22 14:38:21 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (144.7ms)
+  Rendered users/new.html.erb within layouts/application (148.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 179ms (Views: 165.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:38:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:38:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:38:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:38:21 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:38:21 -0400
+
+
+Started POST "/users" for ::1 at 2015-07-22 14:38:35 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+NblqtHHEmpwf0/qATPzH1ekk0fGTMUeHqw+ZpIz1omswZ5xOHWEjnq4s8jdf5pizmKetmZqDJ7iT/MxQXZfVA==", "user"=>{"name"=>"Mario", "email"=>"mario@nintendo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'Mario' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mario@nintendo.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mario"], ["email", "mario@nintendo.com"], ["password_digest", "$2a$10$/o215vFMVkJOwGH9UVgYCuX8yMFlizvlr618bhiLhi8NnEWJUjnrK"], ["created_at", "2015-07-22 18:38:35.346318"], ["updated_at", "2015-07-22 18:38:35.346318"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 187ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2015-07-22 14:38:35 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:38:35 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:38:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:38:35 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:38:35 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:38:35 -0400
+
+
+Started GET "/login" for ::1 at 2015-07-22 14:38:42 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (2.4ms)
+  Rendered sessions/new.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 50ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:38:42 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:38:42 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:38:42 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:38:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:38:42 -0400
+
+
+Started POST "/sessions" for ::1 at 2015-07-22 14:38:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0USSBfe7fHKfa9Y5OX75VBoYnJJqXt7OoHgPyN2PuueFU+neHgnqlpWsKhvlMpApg96RY8p4F05cm8KfDsozOg==", "email"=>"mario@nintendo.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "mario@nintendo.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 137ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-07-22 14:38:54 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:38:54 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:38:54 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:38:54 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:38:54 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:38:54 -0400
+
+
+Started GET "/" for ::1 at 2015-07-22 14:38:58 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-07-22 14:38:58 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-07-22 14:38:58 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-07-22 14:38:58 -0400
+
+
+Started GET "/assets/bootswatch.css?body=1" for ::1 at 2015-07-22 14:38:58 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-07-22 14:38:58 -0400
